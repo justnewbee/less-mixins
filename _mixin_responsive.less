@@ -1,0 +1,62 @@
+/* ================================================================== *
+ * requires less > 1.7
+ * here are the typical width of portrait view for these devices:
+ * phone: <= 479
+ * phone-wide: 480 - 767
+ * pad: 768 - 1024
+ * pc: >= 1025
+ * ================================================================== */
+@responsive-phone-max: 479px;
+@responsive-phone-landscape-min: 480px;
+@responsive-phone-landscape-max: 767px;
+@responsive-tablet-min: 768px;
+@responsive-tablet-max: 1024px;
+@responsive-pc-min: 1025px;
+
+// free responsive
+.responsive-above(@min, @rules) {
+	@media screen and (min-width: @min) {
+		@rules();
+	}
+}
+.responsive-between(@min, @max, @rules) {
+	@media screen and (min-width: @min) and (max-width: @max) {
+		@rules();
+	}
+}
+.responsive-below(@max, @rules) {
+	@media screen and (max-width: @max) {
+		@rules();
+	}
+}
+// device specific responsive
+.responsive-pc(@rules) {
+	.responsive-above(@responsive-pc-min, @rules);
+}
+.responsive-tablet(@rules) {
+	.responsive-between(@responsive-tablet-min, @responsive-tablet-max, @rules);
+}
+.responsive-tablet-below(@rules) {
+	.responsive-below(@responsive-tablet-max, @rules);
+}
+.responsive-phone-landscape(@rules) {
+	.responsive-between(@responsive-phone-landscape-min, @responsive-phone-landscape-max, @rules);
+}
+.responsive-phone-landscape-below(@rules) {
+	.responsive-below(@responsive-phone-landscape-max, @rules);
+}
+.responsive-phone(@rules) {
+	.responsive-below(@responsive-phone-max, @rules);
+}
+// retina
+.retina(@rules) {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+		@rules();
+	}
+}
+.retina-phone(@rules) {
+	@media only screen and (max-width: @responsive-phone-max) and (-webkit-min-device-pixel-ratio: 1.5),
+			only screen and (max-width: @responsive-phone-max) and (min-resolution: 144dpi) {
+		@rules();
+	}
+}

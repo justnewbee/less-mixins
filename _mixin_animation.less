@@ -1,0 +1,79 @@
+.transition(@style) {
+		-moz-transition: @style;
+		-webkit-transition: @style;
+		-o-transition: @style;
+		-ms-transition: @style;
+	transition: @style;
+}
+.transition-all-ease(@ms: 400ms) {
+	.transition(all @ms ease);
+}
+.transition-all-linear(@ms: 400ms) {
+	.transition(all @ms linear);
+}
+
+.perspective(@style) {
+		-moz-perspective: @style;
+		-webkit-perspective: @style;
+		-o-perspective: @style;
+		-ms-perspective: @style;
+	perspective: @style;
+}
+
+.perspective-origin(@style) {
+		-moz-perspective-origin: @style;
+		-webkit-perspective-origin: @style;
+		-o-perspective-origin: @style;
+		-ms-perspective-origin: @style;
+	perspective-origin: @style;
+}
+
+.rotate(@deg: 0) {
+		-moz-transform: rotate(@deg);
+		-webkit-transform: rotate(@deg);
+		-o-transform: rotate(@deg);
+		-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+
+.transform-origin(@style) {
+		-moz-transform-origin: @style;
+		-webkit-transform-origin: @style;
+		-o-transform-origin: @style;
+		-ms-transform-origin: @style;
+	transform-origin: @style;
+}
+
+.transform-style(@style) {
+		-moz-transform-style: @style;
+		-webkit-transform-style: @style;
+		-o-transform-style: @style;
+		-ms-transform-style: @style;
+	transform-style: @style;
+}
+
+.transform(@style) {
+		-moz-transform: @style;
+		-webkit-transform: @style;
+		-o-transform: @style;
+		-ms-transform: @style;
+	transform: @style;
+}
+
+//.transition(@duration:0.2s, @ease:ease-out) {
+//  -webkit-transition: all @duration @ease;
+//  -moz-transition: all @duration @ease;
+//  -o-transition: all @duration @ease;
+//  transition: all @duration @ease;
+//}
+//.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+//  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+//  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+//  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+//}
+//.box-shadow(@arguments) {
+//  -webkit-box-shadow: @arguments;
+//  -moz-box-shadow: @arguments;
+//  box-shadow: @arguments;
+//}

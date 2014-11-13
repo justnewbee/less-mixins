@@ -1,0 +1,41 @@
+.radius(@radius: 4px) {
+		-moz-border-radius: @radius;
+		-webkit-border-radius: @radius;
+		-ms-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Some knowledge about CSS linear gradient prefix:
+// [OLD] background: #005DB5;
+// [FF3.6+]background: -webkit-linear-gradient(top, #F9F9F9, #DADADA);
+// [Chrome10+,Safari5.1+]background: -moz-linear-gradient(top, #F9F9F9, #DADADA);
+// [Opera 11.10+]background: -o-linear-gradient(top, #F9F9F9, #DADADA);
+// [IE10+]background: -ms-linear-gradient(top, #F9F9F9, #DADADA);
+// [W3C]background: linear-gradient(top, #F9F9F9, #DADADA);
+// [IE6-9]filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9F9F9', endColorstr='#DADADA', GradientType=0);
+// Cannot use short color in IE filter!
+.gradient(@from, @to) {
+		background: mix(@from, @to);
+		background: -webkit-linear-gradient(top, @from, @to);
+		background: -moz-linear-gradient(top, @from, @to);
+		background: -o-linear-gradient(top, @from, @to);
+		background: -ms-linear-gradient(top, @from, @to);
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(@from), to(@to));
+	background: linear-gradient(top, @from, @to);
+}
+.gradient-radial(@from, @to) {
+		background: mix(@from, @to);
+		background: -moz-radial-gradient(center, ellipse cover, @from 0%, @to 100%);
+		background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0%, @from), color-stop(100%, @to));
+		background: -webkit-radial-gradient(center, ellipse cover, @from 0%, @to 100%);
+		background: -o-radial-gradient(center, ellipse cover, @from 0%, @to 100%);
+		background: -ms-radial-gradient(center, ellipse cover, @from 0%, @to 100%);
+	background: radial-gradient(ellipse at center, @from 0%, @to 100%);
+}
+
+.box-shadow(@style: 0 1px 0.2em #CCC) {
+		-webkit-box-shadow: @style;
+		-moz-box-shadow: @style;
+		-o-box-shadow: @style;
+	box-shadow: @style;
+}
