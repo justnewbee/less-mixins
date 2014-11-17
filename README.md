@@ -1,5 +1,5 @@
 less-mixins
-===========
+===
 
 version: 0.0.0
 
